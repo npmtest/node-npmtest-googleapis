@@ -1,7 +1,10 @@
-# test coverage for  [googleapis (v19.0.0)](https://github.com/google/google-api-nodejs-client#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-googleapis.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-googleapis) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-googleapis.svg)](https://travis-ci.org/npmtest/node-npmtest-googleapis)
+# npmtest-googleapis
+
+#### test coverage for  [googleapis (v19.0.0)](https://github.com/google/google-api-nodejs-client#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-googleapis.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-googleapis) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-googleapis.svg)](https://travis-ci.org/npmtest/node-npmtest-googleapis)
+
 #### Google APIs Client Library for Node.js
 
-[![NPM](https://nodei.co/npm/googleapis.png?downloads=true)](https://www.npmjs.com/package/googleapis)
+[![NPM](https://nodei.co/npm/googleapis.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/googleapis)
 
 | git-branch : | [alpha](https://github.com/npmtest/node-npmtest-googleapis/tree/alpha)|
 |--:|:--|
@@ -9,11 +12,17 @@
 | test-report : | [![test-report](https://npmtest.github.io/node-npmtest-googleapis/build/test-report.badge.svg)](https://npmtest.github.io/node-npmtest-googleapis/build/test-report.html)|
 | build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-googleapis/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-googleapis/tree/gh-pages/build)|
 
-[![istanbul-coverage](https://npmtest.github.io/node-npmtest-googleapis/build/screenCapture.buildCustomOrg.browser.coverage.html.png)](https://npmtest.github.io/node-npmtest-googleapis/build/coverage.html/index.html)
+- [https://npmtest.github.io/node-npmtest-googleapis/build/coverage.html/index.html](https://npmtest.github.io/node-npmtest-googleapis/build/coverage.html/index.html)
 
-[![test-report](https://npmtest.github.io/node-npmtest-googleapis/build/screenCapture.buildCustomOrg.browser.%252Fhome%252Ftravis%252Fbuild%252Fnpmtest%252Fnode-npmtest-googleapis%252Ftmp%252Fbuild%252Ftest-report.html.png)](https://npmtest.github.io/node-npmtest-googleapis/build/test-report.html)
+[![istanbul-coverage](https://npmtest.github.io/node-npmtest-googleapis/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fcoverage.lib.html.png)](https://npmtest.github.io/node-npmtest-googleapis/build/coverage.html/index.html)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-googleapis/build/screenCapture.buildApidoc.browser.%252Fhome%252Ftravis%252Fbuild%252Fnpmdoc%252Fnode-npmdoc-googleapis%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-googleapis/build/apidoc.html)
+- [https://npmtest.github.io/node-npmtest-googleapis/build/test-report.html](https://npmtest.github.io/node-npmtest-googleapis/build/test-report.html)
+
+[![test-report](https://npmtest.github.io/node-npmtest-googleapis/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Ftest-report.html.png)](https://npmtest.github.io/node-npmtest-googleapis/build/test-report.html)
+
+- [https://npmdoc.github.io/node-npmdoc-googleapis/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-googleapis/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-googleapis/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-googleapis/build/apidoc.html)
 
 ![npmPackageListing](https://npmtest.github.io/node-npmtest-googleapis/build/screenCapture.npmPackageListing.svg)
 
@@ -34,28 +43,22 @@
     },
     "contributors": [
         {
-            "name": "Burcu Dogan",
-            "email": "jbd@google.com"
+            "name": "Burcu Dogan"
         },
         {
-            "name": "Jason Allor",
-            "email": "jasonall@google.com"
+            "name": "Jason Allor"
         },
         {
-            "name": "Jason Dobry",
-            "email": "jason.dobry@gmail.com"
+            "name": "Jason Dobry"
         },
         {
-            "name": "Ryan Seys",
-            "email": "ryanseys@google.com"
+            "name": "Ryan Seys"
         },
         {
-            "name": "Tim Emiola",
-            "email": "tbetbetbe@google.com"
+            "name": "Tim Emiola"
         },
         {
-            "name": "Justin Beckwith",
-            "email": "beckwith@google.com"
+            "name": "Justin Beckwith"
         }
     ],
     "dependencies": {
@@ -100,24 +103,19 @@
     "main": "./lib/googleapis.js",
     "maintainers": [
         {
-            "name": "googleapis-packages",
-            "email": "googleapis-packages@google.com"
+            "name": "googleapis-packages"
         },
         {
-            "name": "jdobry",
-            "email": "jason.dobry@gmail.com"
+            "name": "jdobry"
         },
         {
-            "name": "ryanseys",
-            "email": "ryan@ryanseys.com"
+            "name": "ryanseys"
         },
         {
-            "name": "tbetbetbe",
-            "email": "temiola@google.com"
+            "name": "tbetbetbe"
         },
         {
-            "name": "thejbf",
-            "email": "burcujdogan@gmail.com"
+            "name": "thejbf"
         }
     ],
     "name": "googleapis",
@@ -127,7 +125,6 @@
         ]
     },
     "optionalDependencies": {},
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/google/google-api-nodejs-client.git"
