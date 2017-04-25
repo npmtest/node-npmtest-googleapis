@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for node-npmtest-googleapis/node_modules/googleapis/lib/generator_utils.js</title>
+    <title>Code coverage report for node-npmtest-googleapis/node_modules/googleapis/apis/datastore/v1beta3.js</title>
     <meta charset="utf-8">
     <style>
         body, html {
@@ -190,27 +190,27 @@
     </style>
 </head>
 <body>
-<div class="header medium">
+<div class="header low">
     <h1 style="font-weight: bold;">
         <a href="https://github.com/npmtest/node-npmtest-googleapis">npmtest-googleapis (v0.0.2)</a>
     </h1>
-    <h1>Code coverage report for <span class="entity">node-npmtest-googleapis/node_modules/googleapis/lib/generator_utils.js</span></h1>
+    <h1>Code coverage report for <span class="entity">node-npmtest-googleapis/node_modules/googleapis/apis/datastore/v1beta3.js</span></h1>
     <h2>
         
-        Statements: <span class="metric">66.67% <small>(6 / 9)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">9.3% <small>(4 / 43)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         
         
-        Branches: <span class="metric">0% <small>(0 / 4)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">0% <small>(0 / 26)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         
         
-        Functions: <span class="metric">0% <small>(0 / 2)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">0% <small>(0 / 7)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         
         
-        Lines: <span class="metric">66.67% <small>(6 / 9)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">9.3% <small>(4 / 43)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../../../index.html">All files</a> &#187; <a href="index.html">node-npmtest-googleapis/node_modules/googleapis/lib/</a> &#187; generator_utils.js</div>
+    <div class="path"><a href="../../../../../index.html">All files</a> &#187; <a href="index.html">node-npmtest-googleapis/node_modules/googleapis/apis/datastore/</a> &#187; v1beta3.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
@@ -271,11 +271,637 @@
 55
 56
 57
-58</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461
+462
+463
+464
+465
+466
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493
+494
+495
+496
+497
+498
+499
+500
+501
+502
+503
+504
+505
+506
+507
+508
+509
+510
+511
+512
+513
+514
+515
+516
+517
+518
+519
+520
+521
+522
+523
+524
+525
+526
+527
+528
+529
+530
+531
+532
+533
+534
+535
+536
+537
+538
+539
+540
+541
+542
+543
+544
+545
+546
+547
+548
+549
+550
+551
+552
+553
+554
+555
+556
+557
+558
+559
+560
+561
+562
+563
+564
+565
+566
+567
+568
+569
+570
+571
+572
+573
+574
+575
+576
+577
+578
+579
+580
+581
+582
+583
+584
+585
+586
+587
+588
+589
+590
+591
+592
+593
+594
+595
+596
+597
+598
+599
+600
+601
+602
+603
+604
+605
+606
+607
+608
+609
+610
+611
+612
+613
+614
+615
+616
+617
+618
+619
+620
+621
+622
+623
+624
+625
+626
+627
+628
+629
+630
+631
+632
+633
+634
+635
+636
+637
+638
+639
+640
+641
+642
+643
+644
+645
+646
+647
+648
+649
+650
+651
+652
+653
+654
+655
+656
+657
+658
+659
+660
+661
+662
+663
+664
+665
+666
+667</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -295,101 +921,1302 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// Copyright 2014-2016, Google, Inc.
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//    http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * Copyright 2015 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+&nbsp;
+/* jshint maxlen: false */
 &nbsp;
 'use strict';
 &nbsp;
+var createAPIRequest = require('../../lib/apirequest');
+var utils = require('../../lib/utils');
+&nbsp;
 /**
- * Build a string used to create a URL from the discovery doc provided URL.
+ * Google Cloud Datastore API
  *
- * @private
- * @param  {String} input URL to build from
- * @return {String}       Resulting built URL
+ * Accesses the schemaless NoSQL database to provide fully managed, robust, scalable storage for your application.
+&nbsp;
+ *
+ * @example
+ * var google = require('googleapis');
+ * var datastore = google.datastore('v1beta3');
+ *
+ * @namespace datastore
+ * @type {Function}
+ * @version v1beta3
+ * @variation v1beta3
+ * @param {object=} options Options for Datastore
  */
-<span class="fstat-no" title="function not covered" >function buildurl (input) {</span>
-<span class="cstat-no" title="statement not covered" >  return ('\'' + input + '\'')</span>
-    // No * symbols
-    .replace(/\*/g, '')
-    // No + symbols
-    .replace(/\+/g, '')
-    // replace double slashes with single slash (except in https://)
-    .replace(/([^:]\/)\/+/g, '$1')
-    // No {/ symbols
-    .replace(/\{\//g, '/{');
+<span class="fstat-no" title="function not covered" >function Datastore(options) {</span> // eslint-disable-line
+<span class="cstat-no" title="statement not covered" >  var self = this;</span>
+<span class="cstat-no" title="statement not covered" >  self._options = options || {};</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  self.projects = {</span>
+&nbsp;
+    /**
+     * datastore.projects.beginTransaction
+     *
+     * @desc Begins a new transaction.
+     *
+     * @alias datastore.projects.beginTransaction
+     * @memberOf! datastore(v1beta3)
+     *
+     * @param {object} params Parameters for request
+     * @param {string} params.projectId The ID of the project against which to make the request.
+     * @param {datastore(v1beta3).BeginTransactionRequest} params.resource Request body data
+     * @param {object} [options] Optionally override request options, such as `url`, `method`, and `encoding`.
+     * @param {callback} callback The callback that handles the response.
+     * @return {object} Request object
+     */
+    beginTransaction: <span class="fstat-no" title="function not covered" >function (params, options, callback) {</span>
+<span class="cstat-no" title="statement not covered" >      if (typeof options === 'function') {</span>
+<span class="cstat-no" title="statement not covered" >        callback = options;</span>
+<span class="cstat-no" title="statement not covered" >        options = {};</span>
+      }
+<span class="cstat-no" title="statement not covered" >      options || (options = {});</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      var parameters = {</span>
+        options: utils.extend({
+          url: 'https://datastore.googleapis.com/v1beta3/projects/{projectId}:beginTransaction',
+          method: 'POST'
+        }, options),
+        params: params,
+        requiredParams: ['projectId'],
+        pathParams: ['projectId'],
+        context: self
+      };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      return createAPIRequest(parameters, callback);</span>
+    },
+&nbsp;
+    /**
+     * datastore.projects.commit
+     *
+     * @desc Commits a transaction, optionally creating, deleting or modifying some entities.
+     *
+     * @alias datastore.projects.commit
+     * @memberOf! datastore(v1beta3)
+     *
+     * @param {object} params Parameters for request
+     * @param {string} params.projectId The ID of the project against which to make the request.
+     * @param {datastore(v1beta3).CommitRequest} params.resource Request body data
+     * @param {object} [options] Optionally override request options, such as `url`, `method`, and `encoding`.
+     * @param {callback} callback The callback that handles the response.
+     * @return {object} Request object
+     */
+    commit: <span class="fstat-no" title="function not covered" >function (params, options, callback) {</span>
+<span class="cstat-no" title="statement not covered" >      if (typeof options === 'function') {</span>
+<span class="cstat-no" title="statement not covered" >        callback = options;</span>
+<span class="cstat-no" title="statement not covered" >        options = {};</span>
+      }
+<span class="cstat-no" title="statement not covered" >      options || (options = {});</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      var parameters = {</span>
+        options: utils.extend({
+          url: 'https://datastore.googleapis.com/v1beta3/projects/{projectId}:commit',
+          method: 'POST'
+        }, options),
+        params: params,
+        requiredParams: ['projectId'],
+        pathParams: ['projectId'],
+        context: self
+      };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      return createAPIRequest(parameters, callback);</span>
+    },
+&nbsp;
+    /**
+     * datastore.projects.rollback
+     *
+     * @desc Rolls back a transaction.
+     *
+     * @alias datastore.projects.rollback
+     * @memberOf! datastore(v1beta3)
+     *
+     * @param {object} params Parameters for request
+     * @param {string} params.projectId The ID of the project against which to make the request.
+     * @param {datastore(v1beta3).RollbackRequest} params.resource Request body data
+     * @param {object} [options] Optionally override request options, such as `url`, `method`, and `encoding`.
+     * @param {callback} callback The callback that handles the response.
+     * @return {object} Request object
+     */
+    rollback: <span class="fstat-no" title="function not covered" >function (params, options, callback) {</span>
+<span class="cstat-no" title="statement not covered" >      if (typeof options === 'function') {</span>
+<span class="cstat-no" title="statement not covered" >        callback = options;</span>
+<span class="cstat-no" title="statement not covered" >        options = {};</span>
+      }
+<span class="cstat-no" title="statement not covered" >      options || (options = {});</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      var parameters = {</span>
+        options: utils.extend({
+          url: 'https://datastore.googleapis.com/v1beta3/projects/{projectId}:rollback',
+          method: 'POST'
+        }, options),
+        params: params,
+        requiredParams: ['projectId'],
+        pathParams: ['projectId'],
+        context: self
+      };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      return createAPIRequest(parameters, callback);</span>
+    },
+&nbsp;
+    /**
+     * datastore.projects.runQuery
+     *
+     * @desc Queries for entities.
+     *
+     * @alias datastore.projects.runQuery
+     * @memberOf! datastore(v1beta3)
+     *
+     * @param {object} params Parameters for request
+     * @param {string} params.projectId The ID of the project against which to make the request.
+     * @param {datastore(v1beta3).RunQueryRequest} params.resource Request body data
+     * @param {object} [options] Optionally override request options, such as `url`, `method`, and `encoding`.
+     * @param {callback} callback The callback that handles the response.
+     * @return {object} Request object
+     */
+    runQuery: <span class="fstat-no" title="function not covered" >function (params, options, callback) {</span>
+<span class="cstat-no" title="statement not covered" >      if (typeof options === 'function') {</span>
+<span class="cstat-no" title="statement not covered" >        callback = options;</span>
+<span class="cstat-no" title="statement not covered" >        options = {};</span>
+      }
+<span class="cstat-no" title="statement not covered" >      options || (options = {});</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      var parameters = {</span>
+        options: utils.extend({
+          url: 'https://datastore.googleapis.com/v1beta3/projects/{projectId}:runQuery',
+          method: 'POST'
+        }, options),
+        params: params,
+        requiredParams: ['projectId'],
+        pathParams: ['projectId'],
+        context: self
+      };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      return createAPIRequest(parameters, callback);</span>
+    },
+&nbsp;
+    /**
+     * datastore.projects.lookup
+     *
+     * @desc Looks up entities by key.
+     *
+     * @alias datastore.projects.lookup
+     * @memberOf! datastore(v1beta3)
+     *
+     * @param {object} params Parameters for request
+     * @param {string} params.projectId The ID of the project against which to make the request.
+     * @param {datastore(v1beta3).LookupRequest} params.resource Request body data
+     * @param {object} [options] Optionally override request options, such as `url`, `method`, and `encoding`.
+     * @param {callback} callback The callback that handles the response.
+     * @return {object} Request object
+     */
+    lookup: <span class="fstat-no" title="function not covered" >function (params, options, callback) {</span>
+<span class="cstat-no" title="statement not covered" >      if (typeof options === 'function') {</span>
+<span class="cstat-no" title="statement not covered" >        callback = options;</span>
+<span class="cstat-no" title="statement not covered" >        options = {};</span>
+      }
+<span class="cstat-no" title="statement not covered" >      options || (options = {});</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      var parameters = {</span>
+        options: utils.extend({
+          url: 'https://datastore.googleapis.com/v1beta3/projects/{projectId}:lookup',
+          method: 'POST'
+        }, options),
+        params: params,
+        requiredParams: ['projectId'],
+        pathParams: ['projectId'],
+        context: self
+      };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      return createAPIRequest(parameters, callback);</span>
+    },
+&nbsp;
+    /**
+     * datastore.projects.allocateIds
+     *
+     * @desc Allocates IDs for the given keys, which is useful for referencing an entity before it is inserted.
+     *
+     * @alias datastore.projects.allocateIds
+     * @memberOf! datastore(v1beta3)
+     *
+     * @param {object} params Parameters for request
+     * @param {string} params.projectId The ID of the project against which to make the request.
+     * @param {datastore(v1beta3).AllocateIdsRequest} params.resource Request body data
+     * @param {object} [options] Optionally override request options, such as `url`, `method`, and `encoding`.
+     * @param {callback} callback The callback that handles the response.
+     * @return {object} Request object
+     */
+    allocateIds: <span class="fstat-no" title="function not covered" >function (params, options, callback) {</span>
+<span class="cstat-no" title="statement not covered" >      if (typeof options === 'function') {</span>
+<span class="cstat-no" title="statement not covered" >        callback = options;</span>
+<span class="cstat-no" title="statement not covered" >        options = {};</span>
+      }
+<span class="cstat-no" title="statement not covered" >      options || (options = {});</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      var parameters = {</span>
+        options: utils.extend({
+          url: 'https://datastore.googleapis.com/v1beta3/projects/{projectId}:allocateIds',
+          method: 'POST'
+        }, options),
+        params: params,
+        requiredParams: ['projectId'],
+        pathParams: ['projectId'],
+        context: self
+      };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      return createAPIRequest(parameters, callback);</span>
+    }
+&nbsp;
+  };
 }
 &nbsp;
 /**
- * Disable auto-escaping its output
- * @type {Boolean}
- */
-buildurl.safe = true;
-&nbsp;
+ * @typedef AllocateIdsRequest
+ * @memberOf! datastore(v1beta3)
+ * @type object
+* @property {datastore(v1beta3).Key[]} keys A list of keys with incomplete key paths for which to allocate IDs.
+No key may be reserved/read-only.
+*/
 /**
- * Handle error object with callback
- *
- * @private
- * @param  {Error}   err      Error object to return in callback
- * @param  {Function=} callback Optional callback function
+ * @typedef LookupResponse
+ * @memberOf! datastore(v1beta3)
+ * @type object
+* @property {datastore(v1beta3).EntityResult[]} found Entities found as `ResultType.FULL` entities. The order of results in this
+field is undefined and has no relation to the order of the keys in the
+input.
+* @property {datastore(v1beta3).EntityResult[]} missing Entities not found as `ResultType.KEY_ONLY` entities. The order of results
+in this field is undefined and has no relation to the order of the keys
+in the input.
+* @property {datastore(v1beta3).Key[]} deferred A list of keys that were not looked up due to resource constraints. The
+order of results in this field is undefined and has no relation to the
+order of the keys in the input.
+*/
+/**
+ * @typedef RunQueryResponse
+ * @memberOf! datastore(v1beta3)
+ * @type object
+ * @property {datastore(v1beta3).QueryResultBatch} batch A batch of query results (always present).
+ * @property {datastore(v1beta3).Query} query The parsed form of the `GqlQuery` from the request, if it was set.
  */
-<span class="fstat-no" title="function not covered" >function handleError (err, callback) {</span>
-<span class="cstat-no" title="statement not covered" >  if (callback &amp;&amp; typeof callback === 'function') {</span>
-<span class="cstat-no" title="statement not covered" >    callback(err, null);</span>
-  }
-}
+/**
+ * @typedef PropertyOrder
+ * @memberOf! datastore(v1beta3)
+ * @type object
+ * @property {datastore(v1beta3).PropertyReference} property The property to order by.
+ * @property {string} direction The direction to order by. Defaults to `ASCENDING`.
+ */
+/**
+ * @typedef BeginTransactionRequest
+ * @memberOf! datastore(v1beta3)
+ * @type object
+ */
+/**
+ * @typedef CommitRequest
+ * @memberOf! datastore(v1beta3)
+ * @type object
+* @property {string} mode The type of commit to perform. Defaults to `TRANSACTIONAL`.
+* @property {datastore(v1beta3).Mutation[]} mutations The mutations to perform.
 &nbsp;
-exports.DefaultTransporter = require('../lib/transporters');
-exports.buildurl = buildurl;
-exports.handleError = handleError;
+When mode is `TRANSACTIONAL`, mutations affecting a single entity are
+applied in order. The following sequences of mutations affecting a single
+entity are not permitted in a single `Commit` request:
+&nbsp;
+- `insert` followed by `insert`
+- `update` followed by `insert`
+- `upsert` followed by `insert`
+- `delete` followed by `update`
+&nbsp;
+When mode is `NON_TRANSACTIONAL`, no two mutations may affect a single
+entity.
+* @property {string} transaction The identifier of the transaction associated with the commit. A
+transaction identifier is returned by a call to
+Datastore.BeginTransaction.
+*/
+/**
+ * @typedef KindExpression
+ * @memberOf! datastore(v1beta3)
+ * @type object
+ * @property {string} name The name of the kind.
+ */
+/**
+ * @typedef Key
+ * @memberOf! datastore(v1beta3)
+ * @type object
+* @property {datastore(v1beta3).PathElement[]} path The entity path.
+An entity path consists of one or more elements composed of a kind and a
+string or numerical identifier, which identify entities. The first
+element identifies a _root entity_, the second element identifies
+a _child_ of the root entity, the third element identifies a child of the
+second entity, and so forth. The entities identified by all prefixes of
+the path are called the element&amp;#39;s _ancestors_.
+&nbsp;
+An entity path is always fully complete: *all* of the entity&amp;#39;s ancestors
+are required to be in the path along with the entity identifier itself.
+The only exception is that in some documented cases, the identifier in the
+last path element (for the entity) itself may be omitted. For example,
+the last path element of the key of `Mutation.insert` may have no
+identifier.
+&nbsp;
+A path can never be empty, and a path can have at most 100 elements.
+* @property {datastore(v1beta3).PartitionId} partitionId Entities are partitioned into subsets, currently identified by a project
+ID and namespace ID.
+Queries are scoped to a single partition.
+*/
+/**
+ * @typedef LatLng
+ * @memberOf! datastore(v1beta3)
+ * @type object
+ * @property {number} longitude The longitude in degrees. It must be in the range [-180.0, +180.0].
+ * @property {number} latitude The latitude in degrees. It must be in the range [-90.0, +90.0].
+ */
+/**
+ * @typedef PropertyReference
+ * @memberOf! datastore(v1beta3)
+ * @type object
+* @property {string} name The name of the property.
+If name includes &amp;quot;.&amp;quot;s, it may be interpreted as a property name path.
+*/
+/**
+ * @typedef ArrayValue
+ * @memberOf! datastore(v1beta3)
+ * @type object
+* @property {datastore(v1beta3).Value[]} values Values in the array.
+The order of this array may not be preserved if it contains a mix of
+indexed and unindexed values.
+*/
+/**
+ * @typedef Projection
+ * @memberOf! datastore(v1beta3)
+ * @type object
+ * @property {datastore(v1beta3).PropertyReference} property The property to project.
+ */
+/**
+ * @typedef Mutation
+ * @memberOf! datastore(v1beta3)
+ * @type object
+* @property {datastore(v1beta3).Key} delete The key of the entity to delete. The entity may or may not already exist.
+Must have a complete key path and must not be reserved/read-only.
+* @property {datastore(v1beta3).Entity} insert The entity to insert. The entity must not already exist.
+The entity key&amp;#39;s final path element may be incomplete.
+* @property {string} baseVersion The version of the entity that this mutation is being applied to. If this
+does not match the current version on the server, the mutation conflicts.
+* @property {datastore(v1beta3).Entity} update The entity to update. The entity must already exist.
+Must have a complete key path.
+* @property {datastore(v1beta3).Entity} upsert The entity to upsert. The entity may or may not already exist.
+The entity key&amp;#39;s final path element may be incomplete.
+*/
+/**
+ * @typedef ReadOptions
+ * @memberOf! datastore(v1beta3)
+ * @type object
+* @property {string} readConsistency The non-transactional read consistency to use.
+Cannot be set to `STRONG` for global queries.
+* @property {string} transaction The identifier of the transaction in which to read. A
+transaction identifier is returned by a call to
+Datastore.BeginTransaction.
+*/
+/**
+ * @typedef RollbackResponse
+ * @memberOf! datastore(v1beta3)
+ * @type object
+ */
+/**
+ * @typedef MutationResult
+ * @memberOf! datastore(v1beta3)
+ * @type object
+* @property {string} version The version of the entity on the server after processing the mutation. If
+the mutation doesn&amp;#39;t change anything on the server, then the version will
+be the version of the current entity or, if no entity is present, a version
+that is strictly greater than the version of any previous entity and less
+than the version of any possible future entity.
+* @property {boolean} conflictDetected Whether a conflict was detected for this mutation. Always false when a
+conflict detection strategy field is not set in the mutation.
+* @property {datastore(v1beta3).Key} key The automatically allocated key.
+Set only when the mutation allocated a key.
+*/
+/**
+ * @typedef GqlQuery
+ * @memberOf! datastore(v1beta3)
+ * @type object
+* @property {string} queryString A string of the format described
+[here](https://cloud.google.com/datastore/docs/apis/gql/gql_reference).
+* @property {boolean} allowLiterals When false, the query string must not contain any literals and instead must
+bind all values. For example,
+`SELECT * FROM Kind WHERE a = &amp;#39;string literal&amp;#39;` is not allowed, while
+`SELECT * FROM Kind WHERE a = @value` is.
+* @property {object} namedBindings For each non-reserved named binding site in the query string, there must be
+a named parameter with that name, but not necessarily the inverse.
+&nbsp;
+Key must match regex `A-Za-z_$*`, must not match regex
+`__.*__`, and must not be `&amp;quot;&amp;quot;`.
+* @property {datastore(v1beta3).GqlQueryParameter[]} positionalBindings Numbered binding site @1 references the first numbered parameter,
+effectively using 1-based indexing, rather than the usual 0.
+&nbsp;
+For each binding site numbered i in `query_string`, there must be an i-th
+numbered parameter. The inverse must also be true.
+*/
+/**
+ * @typedef Filter
+ * @memberOf! datastore(v1beta3)
+ * @type object
+ * @property {datastore(v1beta3).CompositeFilter} compositeFilter A composite filter.
+ * @property {datastore(v1beta3).PropertyFilter} propertyFilter A filter on a property.
+ */
+/**
+ * @typedef RollbackRequest
+ * @memberOf! datastore(v1beta3)
+ * @type object
+* @property {string} transaction The transaction identifier, returned by a call to
+Datastore.BeginTransaction.
+*/
+/**
+ * @typedef RunQueryRequest
+ * @memberOf! datastore(v1beta3)
+ * @type object
+* @property {datastore(v1beta3).ReadOptions} readOptions The options for this query.
+* @property {datastore(v1beta3).Query} query The query to run.
+* @property {datastore(v1beta3).PartitionId} partitionId Entities are partitioned into subsets, identified by a partition ID.
+Queries are scoped to a single partition.
+This partition ID is normalized with the standard default context
+partition ID.
+* @property {datastore(v1beta3).GqlQuery} gqlQuery The GQL query to run.
+*/
+/**
+ * @typedef CompositeFilter
+ * @memberOf! datastore(v1beta3)
+ * @type object
+* @property {string} op The operator for combining multiple filters.
+* @property {datastore(v1beta3).Filter[]} filters The list of filters to combine.
+Must contain at least one filter.
+*/
+/**
+ * @typedef AllocateIdsResponse
+ * @memberOf! datastore(v1beta3)
+ * @type object
+* @property {datastore(v1beta3).Key[]} keys The keys specified in the request (in the same order), each with
+its key path completed with a newly allocated ID.
+*/
+/**
+ * @typedef Query
+ * @memberOf! datastore(v1beta3)
+ * @type object
+* @property {datastore(v1beta3).Filter} filter The filter to apply.
+* @property {integer} limit The maximum number of results to return. Applies after all other
+constraints. Optional.
+Unspecified is interpreted as no limit.
+Must be &amp;gt;= 0 if specified.
+* @property {integer} offset The number of results to skip. Applies before limit, but after all other
+constraints. Optional. Must be &amp;gt;= 0 if specified.
+* @property {string} startCursor A starting point for the query results. Query cursors are
+returned in query result batches and
+[can only be used to continue the same query](https://cloud.google.com/datastore/docs/concepts/queries#cursors_limits_and_offsets).
+* @property {datastore(v1beta3).KindExpression[]} kind The kinds to query (if empty, returns entities of all kinds).
+Currently at most 1 kind may be specified.
+* @property {datastore(v1beta3).PropertyReference[]} distinctOn The properties to make distinct. The query results will contain the first
+result for each distinct combination of values for the given properties
+(if empty, all results are returned).
+* @property {datastore(v1beta3).PropertyOrder[]} order The order to apply to the query results (if empty, order is unspecified).
+* @property {datastore(v1beta3).Projection[]} projection The projection to return. Defaults to returning all properties.
+* @property {string} endCursor An ending point for the query results. Query cursors are
+returned in query result batches and
+[can only be used to limit the same query](https://cloud.google.com/datastore/docs/concepts/queries#cursors_limits_and_offsets).
+*/
+/**
+ * @typedef PropertyFilter
+ * @memberOf! datastore(v1beta3)
+ * @type object
+ * @property {datastore(v1beta3).Value} value The value to compare the property to.
+ * @property {datastore(v1beta3).PropertyReference} property The property to filter by.
+ * @property {string} op The operator to filter by.
+ */
+/**
+ * @typedef EntityResult
+ * @memberOf! datastore(v1beta3)
+ * @type object
+* @property {string} cursor A cursor that points to the position after the result entity.
+Set only when the `EntityResult` is part of a `QueryResultBatch` message.
+* @property {string} version The version of the entity, a strictly positive number that monotonically
+increases with changes to the entity.
+&nbsp;
+This field is set for `FULL` entity
+results.
+&nbsp;
+For missing entities in `LookupResponse`, this
+is the version of the snapshot that was used to look up the entity, and it
+is always set except for eventually consistent reads.
+* @property {datastore(v1beta3).Entity} entity The resulting entity.
+*/
+/**
+ * @typedef Value
+ * @memberOf! datastore(v1beta3)
+ * @type object
+* @property {string} nullValue A null value.
+* @property {boolean} booleanValue A boolean value.
+* @property {string} blobValue A blob value.
+May have at most 1,000,000 bytes.
+When `exclude_from_indexes` is false, may have at most 1500 bytes.
+In JSON requests, must be base64-encoded.
+* @property {integer} meaning The `meaning` field should only be populated for backwards compatibility.
+* @property {datastore(v1beta3).ArrayValue} arrayValue An array value.
+Cannot contain another array value.
+A `Value` instance that sets field `array_value` must not set fields
+`meaning` or `exclude_from_indexes`.
+* @property {datastore(v1beta3).Entity} entityValue An entity value.
+&nbsp;
+- May have no key.
+- May have a key with an incomplete key path.
+- May have a reserved/read-only key.
+* @property {datastore(v1beta3).LatLng} geoPointValue A geo point value representing a point on the surface of Earth.
+* @property {datastore(v1beta3).Key} keyValue A key value.
+* @property {string} integerValue An integer value.
+* @property {string} stringValue A UTF-8 encoded string value.
+When `exclude_from_indexes` is false (it is indexed) , may have at most 1500 bytes.
+Otherwise, may be set to at least 1,000,000 bytes.
+* @property {boolean} excludeFromIndexes If the value should be excluded from all indexes including those defined
+explicitly.
+* @property {number} doubleValue A double value.
+* @property {string} timestampValue A timestamp value.
+When stored in the Datastore, precise only to microseconds;
+any additional precision is rounded down.
+*/
+/**
+ * @typedef CommitResponse
+ * @memberOf! datastore(v1beta3)
+ * @type object
+* @property {integer} indexUpdates The number of index entries updated during the commit, or zero if none were
+updated.
+* @property {datastore(v1beta3).MutationResult[]} mutationResults The result of performing the mutations.
+The i-th mutation result corresponds to the i-th mutation in the request.
+*/
+/**
+ * @typedef PartitionId
+ * @memberOf! datastore(v1beta3)
+ * @type object
+ * @property {string} projectId The ID of the project to which the entities belong.
+ * @property {string} namespaceId If not empty, the ID of the namespace to which the entities belong.
+ */
+/**
+ * @typedef Entity
+ * @memberOf! datastore(v1beta3)
+ * @type object
+* @property {datastore(v1beta3).Key} key The entity&amp;#39;s key.
+&nbsp;
+An entity must have a key, unless otherwise documented (for example,
+an entity in `Value.entity_value` may have no key).
+An entity&amp;#39;s kind is its key path&amp;#39;s last element&amp;#39;s kind,
+or null if it has no key.
+* @property {object} properties The entity&amp;#39;s properties.
+The map&amp;#39;s keys are property names.
+A property name matching regex `__.*__` is reserved.
+A reserved property name is forbidden in certain documented contexts.
+The name must not contain more than 500 characters.
+The name cannot be `&amp;quot;&amp;quot;`.
+*/
+/**
+ * @typedef LookupRequest
+ * @memberOf! datastore(v1beta3)
+ * @type object
+ * @property {datastore(v1beta3).ReadOptions} readOptions The options for this lookup request.
+ * @property {datastore(v1beta3).Key[]} keys Keys of entities to look up.
+ */
+/**
+ * @typedef QueryResultBatch
+ * @memberOf! datastore(v1beta3)
+ * @type object
+* @property {string} skippedCursor A cursor that points to the position after the last skipped result.
+Will be set when `skipped_results` != 0.
+* @property {integer} skippedResults The number of results skipped, typically because of an offset.
+* @property {string} entityResultType The result type for every entity in `entity_results`.
+* @property {datastore(v1beta3).EntityResult[]} entityResults The results for this batch.
+* @property {string} endCursor A cursor that points to the position after the last result in the batch.
+* @property {string} moreResults The state of the query after the current batch.
+* @property {string} snapshotVersion The version number of the snapshot this batch was returned from.
+This applies to the range of results from the query&amp;#39;s `start_cursor` (or
+the beginning of the query if no cursor was given) to this batch&amp;#39;s
+`end_cursor` (not the query&amp;#39;s `end_cursor`).
+&nbsp;
+In a single transaction, subsequent query result batches for the same query
+can have a greater snapshot version number. Each batch&amp;#39;s snapshot version
+is valid for all preceding batches.
+The value will be zero for eventually consistent queries.
+*/
+/**
+ * @typedef PathElement
+ * @memberOf! datastore(v1beta3)
+ * @type object
+* @property {string} name The name of the entity.
+A name matching regex `__.*__` is reserved/read-only.
+A name must not be more than 1500 bytes when UTF-8 encoded.
+Cannot be `&amp;quot;&amp;quot;`.
+* @property {string} kind The kind of the entity.
+A kind matching regex `__.*__` is reserved/read-only.
+A kind must not contain more than 1500 bytes when UTF-8 encoded.
+Cannot be `&amp;quot;&amp;quot;`.
+* @property {string} id The auto-allocated ID of the entity.
+Never equal to zero. Values less than zero are discouraged and may not
+be supported in the future.
+*/
+/**
+ * @typedef GqlQueryParameter
+ * @memberOf! datastore(v1beta3)
+ * @type object
+* @property {datastore(v1beta3).Value} value A value parameter.
+* @property {string} cursor A query cursor. Query cursors are returned in query
+result batches.
+*/
+/**
+ * @typedef BeginTransactionResponse
+ * @memberOf! datastore(v1beta3)
+ * @type object
+ * @property {string} transaction The transaction identifier (always present).
+ */
+module.exports = Datastore;
 &nbsp;
 &nbsp;</pre></td></tr>
 </table></pre>
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 18 2017 16:58:24 GMT+0000 (UTC)</div>
+    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 25 2017 04:51:40 GMT+0000 (UTC)</div>
 </div>
 </body>
 </html>
