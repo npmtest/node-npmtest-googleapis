@@ -1,6 +1,6 @@
 # npmtest-googleapis
 
-#### test coverage for  [googleapis (v19.0.0)](https://github.com/google/google-api-nodejs-client#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-googleapis.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-googleapis) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-googleapis.svg)](https://travis-ci.org/npmtest/node-npmtest-googleapis)
+#### basic test coverage for  [googleapis (v19.0.0)](https://github.com/google/google-api-nodejs-client#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-googleapis.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-googleapis) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-googleapis.svg)](https://travis-ci.org/npmtest/node-npmtest-googleapis)
 
 #### Google APIs Client Library for Node.js
 
@@ -10,7 +10,7 @@
 |--:|:--|
 | coverage : | [![istanbul-coverage](https://npmtest.github.io/node-npmtest-googleapis/build/coverage.badge.svg)](https://npmtest.github.io/node-npmtest-googleapis/build/coverage.html/index.html)|
 | test-report : | [![test-report](https://npmtest.github.io/node-npmtest-googleapis/build/test-report.badge.svg)](https://npmtest.github.io/node-npmtest-googleapis/build/test-report.html)|
-| build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-googleapis/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-googleapis/tree/gh-pages/build)|
+| test-server-github : | [![github.com test-server](https://npmtest.github.io/node-npmtest-googleapis/GitHub-Mark-32px.png)](https://npmtest.github.io/node-npmtest-googleapis/build/app/index.html) | | build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-googleapis/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-googleapis/tree/gh-pages/build)|
 
 - [https://npmtest.github.io/node-npmtest-googleapis/build/coverage.html/index.html](https://npmtest.github.io/node-npmtest-googleapis/build/coverage.html/index.html)
 
@@ -152,7 +152,8 @@
             "templates/*"
         ]
     },
-    "version": "19.0.0"
+    "version": "19.0.0",
+    "bin": {}
 }
 ```
 
